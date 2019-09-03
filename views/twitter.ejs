@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>ログイン</title>
+    <style type="text/css">
+      .div_block { width: 300px; display: inline-block; vertical-align: top;
+                   margin: 5px; border: 1px solid #555; }
+      .div_header { background-color: #CCC; padding: 10px;
+                    height: 26px; font-size: 12px;}
+      img { object-fit: cover; width: 300px; height: 160px; display:block;}
+      .nodata { width: 300px; height: 160px; background-color: #EEE;}
+      p { padding: 5px; font-size: 10px; display: block; height: 60px;}
+    </style>
+  </head>
+  <body>
+  <script>
+function post_open() {
+  window.open('', 'new_window');
+ 
+  // フォームを動的に生成
+  var html = '<form id="temp_form" style="display:none;">';
+  var data = {
+    'url': 'https://hacku-techlion.herokuapp.com/google/login'
+  };
+  for(var x in data) {
+    if(data[x] == undefined || data[x] == null) {
+      continue;
+    }
+    var _val = data[x].replace(/'/g, '\'');
+    html += "<input type='hidden' name='" + x + "' value='" + _val + "' >";
+  }
+  html += '</form>';
+  $("body").append(html);
+ 
+  $('#temp_form').action = 'https://hacku-techlion.herokuapp.com/google/login';
+  $('#temp_form').method = 'POST';
+  $('#temp_form').target = 'new_window';
+  $('#temp_form').submit();
+ 
+  // フォームを削除
+  $('#temp_form').remove();
+}
+</script>
+</body>
+</html>

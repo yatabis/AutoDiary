@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja_JP">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form method="post" action="/signup">
+            <div>
+                <label for="name"><%=set_name%></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="google"><%=set_gmail%></label>
+                <input type="mail" id="google" name="google" required>
+            </div>
+            <div>
+                <label for="twitter"><%=set_twitter%></label>
+                <input type="text" id="twitter" name="twitter" required>
+            </div>
+            <input type="submit" value="送信する">
+        </form>
+        <div></div>
+    </body>
+</html>
