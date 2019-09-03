@@ -16,5 +16,9 @@
   },
   "devDependencies": {
     "request": "^2.88.0"
+  },
+  "engines": {
+    "node" : "12.6.0",
+    "npm": "6.10.3"
   }
 }
